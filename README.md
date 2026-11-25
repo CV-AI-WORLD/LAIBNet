@@ -122,7 +122,7 @@ python main.py \
 | Learning rate | 5e-4                                                   |
 | LR schedule   | `MultiStepLR`, γ = 0.8, decay at epochs 40, 80, …, 320 |
 | Epochs        | 320                                                    |
-| Batch size    | 10                                                     |
+| Batch size    | 8                                                     |
 | Input         | 600 × 960 RGB patches, values in `[0, 1]`              |
 | Augmentation  | none (random shuffling only)                           |
 | Hardware      | single GPU                                             |
