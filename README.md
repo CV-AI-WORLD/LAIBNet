@@ -105,7 +105,7 @@ Environment used for the reported run: Python 3.13, PyTorch 2.9.0 + CUDA 12.8, O
 ```
 python main.py \
     --data_dir ./dataset \
-    --batch_size 10 \
+    --batch_size 8 \
     --learning_rate 0.0005 \
     --num_epoch 320 \
     --num_worker 6 \
