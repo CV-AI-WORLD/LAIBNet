@@ -20,7 +20,7 @@ if __name__ == '__main__':
     parser.add_argument('--mode', default='train', choices=['train'], type=str)
     # Train
     parser.add_argument('--resume', type=str, default='')#
-    parser.add_argument('--batch_size', type=int, default=10)
+    parser.add_argument('--batch_size', type=int, default=8)
     parser.add_argument('--learning_rate', type=float, default=0.0005)
     parser.add_argument('--weight_decay', type=float, default=0)
     parser.add_argument('--num_epoch', type=int, default=320)
