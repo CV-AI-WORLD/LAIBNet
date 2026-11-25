@@ -8,7 +8,7 @@ LAIBNet estimates the multiplicative illumination component (the flat field) dir
 >
 >  The accompanying manuscript is under review. Code, pretrained weights and qualitative results are released for reproducibility; quantitative comparison tables will be added after acceptance. Contents may change before publication.
 
-**Keywords:** Image-Adaptive Illumination Bases · flat-field correction · flat field image
+**Keywords:** Image-Adaptive Illumination Bases · flat-field correction · flat field image · uneven illumination correction
 
 ## Overview
 
