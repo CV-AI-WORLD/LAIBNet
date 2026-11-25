@@ -16,7 +16,7 @@ LAIBNet estimates the multiplicative illumination component (the flat field) dir
 
 ![LAIBNet pipeline: input, estimated flat field, corrected image](imgs/overview.jpg)
 
-From left to right: the acquired image (`src`), the illumination field estimated by LAIBNet, and the corrected image. Each row is one slide, shown as its frames arranged in acquisition order. The block-wise shading visible in `src` is captured by the estimated flat field and removed in the correction, while the specimen signal is preserved.
+From left to right: the acquired image (`src`), the illumination field estimated by LAIBNet, and the corrected image. Each row shows one whole-slide image as its constituent frames arranged in acquisition order; every frame is fed to the network independently, and its flat field is estimated and corrected per frame. The block-wise shading visible in `src` is captured by the estimated flat field and removed in the correction, while the specimen signal is preserved.
 
 ## Repository layout
 
