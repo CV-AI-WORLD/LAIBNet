@@ -72,7 +72,7 @@ dataset/
         └── WSI.txt   tile order within the WSI
 ```
 
-The `dataset/` folder in this repository is a **small demo subset** for smoke-testing the pipeline, not the full benchmark: one training sample and one test WSI (`WSI1`, 120 tiles). The complete paired dataset (blood, cervical TCT and other brightfield modalities) is available from the authors on reasonable request.
+The `dataset/` folder in this repository is a **small demo subset** for smoke-testing the pipeline, not the full benchmark: one training sample and three test WSIs (`WSI1` with 120 tiles, `WSI2` with 112 tiles, and `WSI3` with 126 tiles). The complete paired dataset (blood, cervical TCT and other brightfield modalities) is available from the authors on reasonable request.
 
 Patches are trained and evaluated at 600 × 960. Any size divisible by 8 is accepted; non-divisible sizes are handled by explicit padding in `Down`.
 
