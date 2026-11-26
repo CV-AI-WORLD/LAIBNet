@@ -4,6 +4,8 @@
 
 LAIBNet estimates the multiplicative illumination component (the flat field) directly from a single unevenly illuminated image, then recovers the corrected image by dividing by that estimate. No calibration target, no multi-frame acquisition and no reference flat-field image are needed at inference time.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24553632.svg)](https://doi.org/10.5281/zenodo.24553632)
+
 > **Status.**
 >
 >  The accompanying manuscript is under review. Code, pretrained weights and qualitative results are released for reproducibility; quantitative comparison tables will be added after acceptance. Contents may change before publication.
@@ -42,6 +44,9 @@ LAIBNet/
 └── dataset/
     ├── train/               # src / GTC / GTF
     └── test/                # one folder per WSI, tiled patches
+        ├── WSI1/
+        ├── WSI2/
+        └── WSI3/
 ```
 
 ## Dataset format
@@ -65,14 +70,16 @@ dataset/
 │   ├── GTC/   1.jpg ...
 │   └── GTF/   1.jpg ...
 └── test/
-    └── WSI1/
-        ├── src/      1047065.jpg ... 1047184.jpg   (120 tiles)
-        ├── GTC/      1047065.jpg ...
-        ├── GTF/      1047065.jpg ...
-        └── WSI.txt   tile order within the WSI
+    ├── WSI1/
+    │   ├── src/      1047065.jpg ... 1047184.jpg   (120 tiles)
+    │   ├── GTC/      1047065.jpg ...
+    │   ├── GTF/      1047065.jpg ...
+    │   └── WSI.txt   tile order within the WSI
+    ├── WSI2/        (112 tiles, same layout)
+    └── WSI3/        (126 tiles, same layout)
 ```
 
-The `dataset/` folder in this repository is a **small demo subset** for smoke-testing the pipeline, not the full benchmark: one training sample and three test WSIs (`WSI1` with 120 tiles, `WSI2` with 112 tiles, and `WSI3` with 126 tiles). The complete paired dataset (blood, cervical TCT and other brightfield modalities) is available from the authors on reasonable request.
+The `dataset/` folder in this repository is a **small demo subset** for smoke-testing the pipeline, not the full benchmark: one training sample and three test WSIs (`WSI1` with 120 tiles, `WSI2` with 112 tiles, and `WSI3` with 126 tiles). The **complete training set** - paired `src`/`GTC`/`GTF` images covering blood, cervical TCT and other bright-field modalities - is publicly available on Zenodo: [10.5281/zenodo.24553632](https://doi.org/10.5281/zenodo.24553632). The archive follows exactly the `src`/`GTC`/`GTF` layout described above, so it can be used with `--data_dir` unchanged.
 
 Patches are trained and evaluated at 600 × 960. Any size divisible by 8 is accepted; non-divisible sizes are handled by explicit padding in `Down`.
 
@@ -155,7 +162,7 @@ The MS-SSIM implementation under `pytorch_msssim/` is a vendored copy of [pytorc
 
 ## License
 
-Released for academic and research use. For commercial licensing, please contact the authors.
+This project is released under the [MIT License](LICENSE), Copyright (c) 2026 The LAIBNet Authors. Commercial use is permitted under the terms of the license.
 
 ## Citation
 
